@@ -1,16 +1,51 @@
-# React + Vite
+Create a `.env` file and add below information as pre your requirement
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Jira Cloud
+JIRA_BASE_URL=https://netskope.atlassian.net <br/>
+JIRA_EMAIL=<your_emeail><br/>
+JIRA_API_TOKEN=<api_token><br/>
 
-Currently, two official plugins are available:
+# Confluence Cloud (usually same instance/token as Jira)
+CONFLUENCE_BASE_URL=https://netskope.atlassian.net<br/>
+CONFLUENCE_EMAIL=<your_email><br/>
+CONFLUENCE_API_TOKEN=<api_token><br/>
+# Your Atlassian account ID (find it at: yourcompany.atlassian.net/rest/api/3/myself)
+CONFLUENCE_ACCOUNT_ID=<account_id>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# GitHub
+GITHUB_TOKEN=<github_token><br/>
+GITHUB_USERNAME=<github_username><br/>
 
-## React Compiler
+# These are used by the React app to build deep links.
+VITE_JIRA_BASE_URL=https://netskope.atlassian.net<br/>
+VITE_CONFLUENCE_BASE_URL=https://netskope.atlassian.net<br/>
+VITE_CONFLUENCE_ACCOUNT_ID=<account_id><br/>
+VITE_GITHUB_USERNAME=<github_username><br/>
+VITE_GITHUB_ORG=netSkope<br/>
+VITE_DISPLAY_NAME=<your_name><br/>
+VITE_DESIGNATION=<your_designation><br/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Slack — On-Call monitor
+# Bot needs: channels:history + channels:read scopes
+# Channel ID: right-click #dp-oncall in Slack → View channel details → copy ID
+SLACK_BOT_TOKEN=<token><br/>
+SLACK_CHANNEL_ID=<channel_id><br/>
+VITE_SLACK_CHANNEL_ID=<chan_id><br/>
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# How to start
+npm run dev
+
+sshukla@HG9B874:~/dev-dashboard$ dashboard
+
+> dev-dashboard@0.0.0 dev
+> vite
+
+
+  VITE v8.0.5  ready in 704 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+In your browser open: http://localhost:5173/

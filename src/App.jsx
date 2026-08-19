@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutDashboard, Ticket, GitPullRequest, FileText, StickyNote, Home, Bell } from 'lucide-react';
+import { LayoutDashboard, Ticket, GitPullRequest, FileText, StickyNote, Home, Bell, Grid2x2 } from 'lucide-react';
 import { DataProvider } from './context/DataContext';
 import { AlertProvider, useAlerts } from './context/AlertContext';
 import { HomePage } from './pages/HomePage';
@@ -7,6 +7,7 @@ import { JiraIssues } from './components/JiraIssues';
 import { GitHubPRs } from './components/GitHubPRs';
 import { ConfluencePages } from './components/ConfluencePages';
 import { Notes } from './components/Notes';
+import { WorkTracker } from './components/WorkTracker';
 import { OnCallPage } from './pages/OnCallPage';
 import './index.css';
 
@@ -35,6 +36,7 @@ function AppShell() {
     { id: 'github-prs', label: 'Pull Requests', Icon: GitPullRequest },
     { id: 'confluence', label: 'Confluence',    Icon: FileText       },
     { id: 'notes',      label: 'Notes',         Icon: StickyNote     },
+    { id: 'tracker',    label: 'Work Tracker',  Icon: Grid2x2        },
     { id: 'oncall',     label: 'On-Call',       Icon: Bell,
       badge: firing.length,
       urgent: needsAction.length > 0,
@@ -147,6 +149,7 @@ function AppShell() {
         {view === 'github-prs' && <GitHubPRs sectionId="github-prs" />}
         {view === 'confluence' && <ConfluencePages confluenceBaseUrl={config.confluenceBaseUrl} sectionId="confluence" />}
         {view === 'notes'      && <Notes sectionId="notes" />}
+        {view === 'tracker'    && <WorkTracker sectionId="tracker" />}
         {view === 'oncall'     && <OnCallPage />}
       </main>
     </div>

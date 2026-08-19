@@ -12,6 +12,7 @@ export async function fetchMyPRs(username, org) {
     ? `is:pr author:${username} org:${org}`
     : `is:pr author:${username}`;
   const url = `${BASE}/search/issues?q=${encodeURIComponent(q)}&sort=updated&per_page=100`;
+  console.log("URL:", url);
   const res = await fetch(url);
   if (!res.ok) {
     const text = await res.text();
